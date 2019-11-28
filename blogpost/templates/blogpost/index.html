@@ -10,10 +10,8 @@
             {{ post.posted_date }}
         </time>
         <div class='title_body'>
-            <h1>
-                <a href="/{{ post.id }}/">{{ post.title }}</a>
-            </h1>
-            <p> {{ post.body }}</p>
+            <h1>{{ post.title }}</h1>
+            <p> {{ post.body | safe }}</p>
         </div>
     </article>
 {% endfor %}
