@@ -1,0 +1,25 @@
+{% extends 'blogpost/base.html' %}
+
+{% block content %}
+
+<div class='posts'>
+{% if recent_20_posts %}
+    {% for post in recent_20_posts %}
+    <article>
+        <time pubdate='{{ post.posted_date }}'>
+            {{ post.posted_date }}
+        </time>
+        <div class='title_body'>
+            <h1>
+                <a href="/{{ post.id }}/">{{ post.title }}</a>
+            </h1>
+            <p> {{ post.body }}</p>
+        </div>
+    </article>
+{% endfor %}
+</div>
+{% else %}
+<p>还没有发表任何文章，赶快去发表把.</p>
+{% endif %}
+
+{% endblock %}

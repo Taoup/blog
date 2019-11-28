@@ -1,0 +1,50 @@
+
+body {
+    text-rendering: optimizeLegibility;
+    color: #222;
+    position: relative;
+}
+
+body .wrap {
+    width: 600px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 5em;
+    margin-left: auto;
+}
+
+body .topgroup{
+    height: 100px;
+    border-bottom: 1px solid;
+}
+header{
+    height: fit-content;
+    font-size: 50px;
+}
+
+article time {
+    font-family: "PT Sans Caption";
+    color: rgb(150, 150, 150);
+}
+
+article {
+    border-bottom: 1px dotted;
+}
+/* 
+div .posts .timeline {
+    width: 120px;
+    padding-left: 2px;
+    float: left;
+    font-size: 25px;
+}
+div .posts .title_body {
+    width: 488;
+    padding-right: 2px;
+    font-size: 25px;
+    float: left;
+    text-align: left;
+} */
+
+div .post a {
+    font-size: 25px;
+}

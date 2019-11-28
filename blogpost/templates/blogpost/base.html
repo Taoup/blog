@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%load static %}
+<html>
+
+<head>
+    <title>Tao</title>
+    <link rel="stylesheet" href="{% static 'blogpost/css/style.css' %}" type="text/css" , media='screen' ,
+        charset='utf-8'>
+</head>
+
+<body>
+    <div class='wrap'>
+        <div class='topgroup'>
+            <header>
+                I&1 = 1
+            </header>
+        </div>
+        {% block content %}
+        <p>
+            这是一段测试的东东，不要认真，步子迈太大，容易扯着蛋。
+        </p>
+        {% endblock %}
+    </div>
+</body>
+
+</html>
