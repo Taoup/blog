@@ -71,7 +71,7 @@ div .post a {
     font-size: 25px;
 }
 code {
-    color: #FF0000;
+    background: #e7e7e7;
     font-family: 'Courier New', Courier, monospace;
 }
 .codehilite .hll { background-color: #ffffcc }
