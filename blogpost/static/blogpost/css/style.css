@@ -13,6 +13,13 @@ body .wrap {
     margin-left: auto;
 }
 
+em {
+    font: bold;
+}
+blockquote {
+    background: #eeeeee;
+}
+
 body .topgroup{
     height: 100px;
     border-bottom: 1px solid;
