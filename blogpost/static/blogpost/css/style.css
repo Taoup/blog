@@ -21,15 +21,37 @@ header{
     height: fit-content;
     font-size: 50px;
 }
-
+h1 {
+    margin-top: 0px;
+}
 article time {
     font-family: "PT Sans Caption";
-    color: rgb(150, 150, 150);
+    font-size: 18px;
+    color: rgb(78, 78, 78);
+}
+div.posts article ul {
+    width: 600px;
+    margin:2 auto;
+    background-color: #00A000;
+}
+div.posts article ul li.time {
+    width: 130px;
+    height: 30px;
+    float: left;
+    list-style-type: none;
+    /* background-color: #666666; */
+}
+div.posts article ul li.body {
+    list-style-type: none;
+    float: left;
+    width: 450px;
+    /* background-color: #af3838; */
+    border-bottom: dashed 1px;
 }
 
-article {
+/* article {
     border-bottom: 1px dotted;
-}
+} */
 /* 
 div .posts .timeline {
     width: 120px;
