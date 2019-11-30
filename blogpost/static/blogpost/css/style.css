@@ -4,7 +4,10 @@ body {
     color: #222;
     position: relative;
 }
-
+a {
+    text-decoration: none;
+    color: #5798ec
+}
 body .wrap {
     width: 600px;
     margin-top: 0px;
