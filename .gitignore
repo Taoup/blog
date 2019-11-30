@@ -3,5 +3,5 @@ db.sqlite3
 *.pyc
 mysite/settings.py
 deploy.conf
-
+*/__pycache__
 fabfile.py
