@@ -23,10 +23,9 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=100, unique=True)),
-                ('author', models.CharField(max_length=100, unique=True)),
                 ('slug', models.SlugField(max_length=100, unique=True)),
                 ('body', models.TextField()),
-                ('posted', models.DateField(auto_now_add=True, db_index=True)),
+                ('posted_date', models.DateField(auto_now_add=True, db_index=True)),
                 ('tags', models.ManyToManyField(blank=True, to='blogpost.Tag')),
             ],
         ),

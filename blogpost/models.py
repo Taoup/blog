@@ -14,7 +14,6 @@ class Tag(models.Model):
 class Blogpost(models.Model):
 
     title = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=100, unique=True)
     body = models.TextField()
     posted_date = models.DateField(db_index=True, auto_now_add=True)
 

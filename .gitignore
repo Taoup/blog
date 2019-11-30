@@ -5,3 +5,4 @@ mysite/settings.py
 deploy.conf
 */__pycache__
 fabfile.py
+db.sqlite3.back
