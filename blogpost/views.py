@@ -28,5 +28,5 @@ def index(request):
 
 def tag_view(request, tagid):
     # id = get_object_or_404(Tag, name=tagname)
-    posts_of_tag = Blogpost.objects.filter(tags=tagid)[:20]
+    posts_of_tag = Blogpost.objects.filter(tags=tagid).order_by('-posted_date')[:20]
     return _render(request, posts_of_tag)
