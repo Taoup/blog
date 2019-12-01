@@ -15,7 +15,8 @@ def _render(request, posts):
             'markdown.extensions.codehilite',
             ]
         )
-    context = {'recent_20_posts': posts}
+    tags = Tag.objects.all()
+    context = {'recent_20_posts': posts, 'tags':tags}
     return render(request, 'blogpost/index.html', context)
 
 

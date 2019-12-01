@@ -9,11 +9,25 @@ a {
     color: #5798ec
 }
 body .wrap {
-    width: 600px;
+    width: 1000px;
     margin-top: 0px;
     margin-right: auto;
     margin-bottom: 5em;
     margin-left: auto;
+}
+li {
+    list-style-type: none;
+}
+
+li.main {
+    width: 600px;
+    float: left;
+}
+
+li.sidebar {
+    /* border: solid 2px; */
+    float: left;
+    width: 200px;
 }
 
 em {
