@@ -25,3 +25,21 @@
 {% endif %}
 
 {% endblock %}
+
+{% block tags %}
+    <p>
+        博客标签：
+    </p>
+    {% if tags %}
+    <ul>
+    {% for tag in tags %}
+    <li>
+        <a href={% url "tags" tag.id %} class = 'tags'>
+            {{ tag.name }}
+        </a>
+    </li>
+
+    {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock %}

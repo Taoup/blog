@@ -12,14 +12,26 @@
     <div class='wrap'>
         <div class='topgroup'>
             <header>
-                I&1 = 1
+                I&1 = 1： 一个没有前端的博客
             </header>
         </div>
-        {% block content %}
-        <p>
-            这是一段测试的东东，不要认真，步子迈太大，容易扯着蛋。
-        </p>
-        {% endblock %}
+        <ul>
+            <li class='main'>
+                {% block content %}
+                <p>
+                    这是一段测试的东东，不要认真，步子迈太大，容易扯着蛋。
+                </p>
+                {% endblock %}
+            </li>
+            <li class = 'sidebar'>
+                {% block tags %}
+                <p>
+                    还没有任何标签呢！
+                </p>
+                {% endblock %}
+            </li>
+        </ul>
+
     </div>
 </body>
 
