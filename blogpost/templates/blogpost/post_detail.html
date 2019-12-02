@@ -1,0 +1,23 @@
+{% extends 'blogpost/base.html' %}
+
+
+{% block content %}
+<h1>{{post.title}}</h1>
+<p> {{post.body | safe }}</p>
+{% endblock %}
+
+
+{% block tags %}
+{% if tags %}
+<ul>
+    {% for tag in tags %}
+    <li>
+        <a href={% url "tagged_list" tag.id %} class='tags'>
+            {{ tag.name }}
+        </a>
+    </li>
+
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

@@ -1,10 +1,9 @@
 {% extends 'blogpost/base.html' %}
 
-{% block content %}
 
-<div class='posts'>
-    {% if recent_20_posts %}
-    {% for post in recent_20_posts %}
+{% block content %}
+{% if posts %}
+    {% for post in posts %}
     <article>
         <ul>
             <li class='time'>
@@ -13,27 +12,29 @@
                 </time>
             </li>
             <li class='body'>
-                <h1>{{ post.title }}</h1>
-                <p> {{ post.body | safe }}</p>
+                <a href='{% url "post_detail" post.id %}'>{{ post.title }}</a>
             </li>
         </ul>
     </article>
     {% endfor %}
-</div>
 {% else %}
 <p>还没有发表任何文章，赶快去发表把.</p>
 {% endif %}
+
 {% endblock %}
+
+
 {% block tags %}
 {% if tags %}
 <ul>
     {% for tag in tags %}
     <li>
-        <a href={% url "tags" tag.id %} class='tags'>
+        <a href={% url "tagged_list" tag.id %} class='tags'>
             {{ tag.name }}
         </a>
     </li>
+
     {% endfor %}
 </ul>
 {% endif %}
-{% endblock%}
+{% endblock %}

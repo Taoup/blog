@@ -12,8 +12,12 @@
     <div class='wrap'>
         <div class='topgroup'>
             <header>
-                I&1 = 1： 一个没有前端的博客
+                <a href="{% url 'index' %}">I&1 = 1</a>
             </header>
+            <nav>
+                <a href='{% url "list" %}'>列表</a>
+                <span></span>
+            </nav>
         </div>
         <ul>
             <li class='main'>
@@ -23,11 +27,12 @@
                 </p>
                 {% endblock %}
             </li>
-            <li class = 'sidebar'>
-                {% block tags %}
+            <li class='sidebar'>
                 <p>
-                    还没有任何标签呢！
+                    博客标签：
                 </p>
+                {% block tags %}
+                <p>Tag not defined!</p>
                 {% endblock %}
             </li>
         </ul>

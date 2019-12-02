@@ -30,3 +30,27 @@ def tag_view(request, tagid):
     # id = get_object_or_404(Tag, name=tagname)
     posts_of_tag = Blogpost.objects.filter(tags=tagid).order_by('-posted_date')[:20]
     return _render(request, posts_of_tag)
+
+def list_view(request):
+    all_posts = Blogpost.objects.values('posted_date', 'title', 'id').order_by('-posted_date')
+    tags = Tag.objects.all()
+    return render(request, 'blogpost/list.html', {'posts':all_posts, 'tags':tags})
+
+def tagged_list_view(request, tagid):
+    all_posts = Blogpost.objects.filter(tags=tagid).values('posted_date', 'title', 'id').order_by('-posted_date')
+    tags = Tag.objects.all()
+    return render(request, 'blogpost/list.html', {'posts':all_posts, 'tags':tags})
+
+def post_detail(request, blogid):
+    post = Blogpost.objects.get(id=blogid)
+    post.body = markdown.markdown(post.body,
+         extensions=[
+            # 包含 缩写、表格等常用扩展
+            'markdown.extensions.extra',
+            # 语法高亮扩展
+            'markdown.extensions.codehilite',
+            ]
+        )
+    tags = Tag.objects.all()
+    context = {'post': post, 'tags':tags}
+    return render(request, 'blogpost/post_detail.html', context)
