@@ -11,13 +11,15 @@
 <body>
     <div class='wrap'>
         <div class='topgroup'>
-            <header>
-                <a href="{% url 'index' %}">I&1 = 1</a>
-            </header>
-            <nav>
-                <a href='{% url "list" %}'>列表</a>
-                <span></span>
-            </nav>
+            <br/>
+            <br/>
+            <h1>
+                <a href="{% url 'index' %}">I&1 = 1:这个博客没有前端</a>
+            </h1>
+            <ul class='navigation'>
+                <li><a href='{% url "index" %}'>Home</a></li>
+                <li><a href='{% url "list" %}'>List</a></li>
+            </ul>
         </div>
         <ul>
             <li class='main'>

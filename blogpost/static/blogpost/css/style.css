@@ -14,7 +14,7 @@ body .wrap .topgroup{
     font-size: 30px;
     line-height: 25px;
     padding-left: 2px;
-    height:120px;
+    height:150px;
 }
 
 body .wrap .topgroup header {
@@ -25,13 +25,17 @@ body .wrap .topgroup header {
     font-size:60px;
 }
 
-body .wrap .topgroup nav {
-    text-align: right;
+.navigation {
+    display: inline-block;
     padding-right: 2px;
-    width: 80%;
-    float: left ;
+    margin: 0px;
+    /* width: 80%; */
     height:50px;
     font-size:30px;
+}
+
+.navigation li{
+    display: inline;
 }
 
 body .wrap {
@@ -41,6 +45,7 @@ body .wrap {
     margin-bottom: 5em;
     margin-left: auto;
 }
+
 li {
     list-style-type: none;
 }
