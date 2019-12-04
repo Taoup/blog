@@ -46,17 +46,15 @@ body .wrap {
     margin-left: auto;
 }
 
-li {
-    list-style-type: none;
-}
-
 li.main {
+    list-style-type: none;
     width: 600px;
     float: left;
 }
 
 li.sidebar {
     /* border: solid 2px; */
+    list-style-type: none;
     float: left;
     width: 200px;
 }
