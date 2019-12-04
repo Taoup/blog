@@ -18,6 +18,7 @@ class Blogpost(models.Model):
     posted_date = models.DateField(db_index=True, auto_now_add=True)
 
     tags = models.ManyToManyField(Tag, blank=True)
+    public = models.BooleanField(default = True)
 
     def __unicode__(self):
         return self.title
@@ -25,8 +26,6 @@ class Blogpost(models.Model):
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
-        return ('view_blog_post', None, { 'slug': self.slug })
 
 
 
