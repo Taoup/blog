@@ -32,7 +32,7 @@ class TestLogin(TestCase):
         self.client.logout()
         t = create_blog('test_postDetail_while_logout', False)
 
-        res = self.client.get(f'post/{t.id}')
+        res = self.client.get(f'/post/{t.id}')
 
         # 不存在 or 无权限访问？
         self.assertEqual(res.status_code, 404)
