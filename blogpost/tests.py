@@ -1,6 +1,9 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from .models import Blogpost
+from django.urls import reverse
+
+
 
 # Create your tests here.
 def create_blog(id, public):
@@ -14,10 +17,10 @@ class TestLogin(TestCase):
     def testNonlogin(self):
         self.client.logout()
         create_blog('ttt', False)
-        response = self.client.get('/')
+        response = self.client.get(reverse('index'))
         self.assertNotContains(response, 'ttt')
         create_blog('xxx', True)
-        response = self.client.get('/')
+        response = self.client.get(reverse('index'))
         self.assertContains(response, 'xxx')
 
     
@@ -25,14 +28,14 @@ class TestLogin(TestCase):
         t = self.client.login(username='test', password='test')
         self.assertTrue(t)
         create_blog('testLogin', False)
-        response = self.client.get('/')
+        response = self.client.get(reverse('index'))
         self.assertContains(response, 'testLogin')
 
     def test_postDetail_while_logout(self):
         self.client.logout()
         t = create_blog('test_postDetail_while_logout', False)
 
-        res = self.client.get(f'/post/{t.id}')
+        res = self.client.get(reverse('post_detail', args=[t.id]))
 
         # 不存在 or 无权限访问？
         self.assertEqual(res.status_code, 404)
@@ -40,26 +43,27 @@ class TestLogin(TestCase):
     def test_postDetail_logout_then_login(self):
         self.client.logout()
         t = create_blog('test_postDetail_while_logout', False)
-        res = self.client.get(f'/post/{t.id}')
+        res = self.client.get(reverse('post_detail', args=[t.id]))
         # 不存在 or 无权限访问？
         self.assertEqual(res.status_code, 404)
         self.assertTrue(self.client.login(username='test', password='test'))
-        res = self.client.get(f'/post/{t.id}')
+        res = self.client.get(reverse('post_detail', args=[t.id]))
         # 不存在 or 无权限访问？
         self.assertContains(res, 'test_postDetail_while_logout')
         
     def test_non_existing_tags(self):
-        res = self.client.get('/list/tag/1000000')
+        # res = self.client.get('/list/tag/1000000')
+        res = self.client.get(reverse('tagged_list', args=[1000000]))
         self.assertEqual(res.status_code, 404)
 
     def test_non_existing_post(self):
-        res = self.client.get('/post/1000000')
+        res = self.client.get(reverse('post_detail', args=[100000]))
         self.assertEqual(res.status_code, 404)
 
     def test_exstreme_numbers_of_posts(self):
-        res = self.client.get('/post/100000000000000000000000')
+        res = self.client.get(reverse('post_detail', args=[10000000000000000000000]))
         self.assertEqual(res.status_code, 404)
 
     def test_exstreme_numbers_of_tags(self):
-        res = self.client.get('/list/tag/100000000000000000000000')
+        res = self.client.get(reverse('tagged_list', args=[10000000000000000000000]))
         self.assertEqual(res.status_code, 404)
