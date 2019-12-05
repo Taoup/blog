@@ -51,12 +51,7 @@ a {
     width: 20%;
 }
 
-
-.article{
-    float:left;
-}
-
-article:after {
+.article:after {
     content: "";
     display: table;
     clear: both;
