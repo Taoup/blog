@@ -5,17 +5,15 @@
 <div class='posts'>
     {% if recent_20_posts %}
     {% for post in recent_20_posts %}
-    <div class='article'>
-        <div class='left'>
+        <div class='article left'>
             <time pubdate='{{ post.posted_date }}'>
                 {{ post.posted_date }}
             </time>
         </div>
-        <div class='right'>
+        <div class='article right'>
             <h1>{{ post.title }}</h1>
             <p> {{ post.body | safe }}</p>
         </div>
-    </div>
     {% endfor %}
 </div>
 {% else %}

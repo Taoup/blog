@@ -1,22 +1,19 @@
 {% extends 'blogpost/base.html' %}
 
-
 {% block content %}
 {% if posts %}
+<div class='posts'>
     {% for post in posts %}
-    <article>
-        <ul>
-            <li class='time'>
-                <time pubdate='{{ post.posted_date }}'>
-                    {{ post.posted_date }}
-                </time>
-            </li>
-            <li class='body'>
-                <a href='{% url "post_detail" post.id %}'>{{ post.title }}</a>
-            </li>
-        </ul>
-    </article>
-    {% endfor %}
+    <div class='article left'>
+        <time pubdate='{{ post.posted_date }}'>
+            {{ post.posted_date }}
+        </time>
+    </div>
+    <div class='article right', id = 'post_link'>
+        <a href='{% url "post_detail" post.id %}'>{{ post.title }}</a>
+    </div>
+{% endfor %}
+</div>
 {% else %}
 <p>还没有发表任何文章，赶快去发表把.</p>
 {% endif %}
