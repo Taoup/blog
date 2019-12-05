@@ -10,36 +10,34 @@
 
 <body>
     <div class='wrap'>
-        <div class='topgroup'>
-            <br/>
-            <br/>
+        <div class='header'>
             <h1>
-                <a href="{% url 'index' %}">I&1 = 1:这个博客没有前端</a>
+                <a href="{% url 'index' %}">I&1 = 1</a>
             </h1>
-            <ul class='navigation'>
-                <li><a href='{% url "index" %}'>Home</a></li>
-                <li><a href='{% url "list" %}'>List</a></li>
-                <li><a href='{% url "login" %}'>Login</a></li>
-            </ul>
+            <p>这个博客没有前端</p>
         </div>
-        <ul>
-            <li class='main'>
+
+        <div class = 'topnav'>
+            <a href='{% url "index" %}'>Home</a>
+            <a href='{% url "list" %}'>List</a>
+        </div>
+
+        <div class = 'row'>
+            <div class = 'column left'>
                 {% block content %}
                 <p>
                     这是一段测试的东东，不要认真，步子迈太大，容易扯着蛋。
                 </p>
                 {% endblock %}
-            </li>
-            <li class='sidebar'>
+            </div>
+            <div class = 'column right'>
                 <p>
                     博客标签：
                 </p>
                 {% block tags %}
                 <p>Tag not defined!</p>
                 {% endblock %}
-            </li>
-        </ul>
-
+            </div>
     </div>
 </body>
 
