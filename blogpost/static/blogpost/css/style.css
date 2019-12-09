@@ -33,49 +33,31 @@ a {
     color: black;
 }
 
-.column {
-    float: left;
+#sidebar{
+    float:right;
+    width:20%;
 }
 
-.row:after {
-    content: "";
+#main{
+    margin-right: 20%;
     display: table;
-    clear: both;
 }
 
-.left {
-    width: 80%;
+.rows{
+    display: table-row;
 }
 
-.right {
-    width: 20%;
+.rows .time-line{
+    display:table-cell;
+    text-align: left;
+    width:150px;
+}
+.rows .content{
+    display: table-cell;
 }
 
-.article:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.article {
-    float:left;
-    /* border-bottom: 1px dashed; */
-}
-
-.posts .left{
-    width: 20%;
-}
-
-.posts .right{
-    width: 70%;
-    border-bottom: 1px dashed;
-}
-.article h1{
-    margin-top: 0px;
-}
-
-#post_link {
-    border: 0px;
+.rows .post-body{
+    border-bottom: dashed 1px;
 }
 
 body .wrap {

@@ -22,23 +22,23 @@
             <a href='{% url "list" %}'>List</a>
         </div>
 
-        <div class = 'row'>
-            <div class = 'column left'>
-                {% block content %}
-                <p>
-                    这是一段测试的东东，不要认真，步子迈太大，容易扯着蛋。
-                </p>
-                {% endblock %}
-            </div>
-            <div class = 'column right'>
-                <p>
-                    博客标签：
-                </p>
-                {% block tags %}
-                <p>Tag not defined!</p>
-                {% endblock %}
-            </div>
-    </div>
+        <div id='sidebar'>
+            <p>
+                博客标签：
+            </p>
+            {% block tags %}
+            <p>Tag not defined!</p>
+            {% endblock %}
+        </div>
+        
+        <div id='main'>
+            {% block content %}
+            <p>
+                这是一段测试的东东，不要认真，步子迈太大，容易扯着蛋。
+            </p>
+            {% endblock %}
+        </div>
+            
 </body>
 
 </html>

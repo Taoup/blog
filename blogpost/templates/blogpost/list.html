@@ -2,18 +2,18 @@
 
 {% block content %}
 {% if posts %}
-<div class='posts'>
     {% for post in posts %}
-    <div class='article left'>
-        <time pubdate='{{ post.posted_date }}'>
-            {{ post.posted_date }}
-        </time>
-    </div>
-    <div class='article right', id = 'post_link'>
-        <a href='{% url "post_detail" post.id %}'>{{ post.title }}</a>
+    <div class = 'rows'>
+        <div class='time-line'>
+            <time pubdate='{{ post.posted_date }}'>
+                {{ post.posted_date }}
+            </time>
+        </div>
+        <div class='content'>
+            <a href='{% url "post_detail" post.id %}'>{{ post.title }}</a>
+        </div>
     </div>
 {% endfor %}
-</div>
 {% else %}
 <p>还没有发表任何文章，赶快去发表把.</p>
 {% endif %}
